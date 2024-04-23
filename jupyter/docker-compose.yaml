@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  langchain:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: langchain
+    command: bash -c "
+      cd /var/app
+      && python3 langchain-tutorial.py"
+    tty: true
+    #restart: always
